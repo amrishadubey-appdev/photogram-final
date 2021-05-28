@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def home
+    render({ :template => "home/homepage.html.erb" })
+  end
+
 end

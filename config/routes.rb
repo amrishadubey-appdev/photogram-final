@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # Routes for the Follow request resource:
 
+  #HOMEPAGE
+  get("/", { :controller => "application", :action => "home" })
+
   # CREATE
   post("/insert_follow_request", { :controller => "follow_requests", :action => "create" })
           
@@ -101,6 +104,11 @@ Rails.application.routes.draw do
   get("/delete_photo/:path_id", { :controller => "photos", :action => "destroy" })
 
   #------------------------------
+
+  #USERS
+  get("/users", { :controller => "photos", :action => "destroy" })
+
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
