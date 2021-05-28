@@ -86,5 +86,14 @@ class UserAuthenticationController < ApplicationController
     
     redirect_to("/", { :notice => "User account cancelled" })
   end
+
+  def index
+    matching_users = User.all
+
+    @list_of_users = matching_users.order({ :created_at => :desc })
+
+    render({ :template => "home/homepage.html.erb" })
+  end
+
  
 end

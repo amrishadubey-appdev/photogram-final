@@ -106,7 +106,7 @@ Rails.application.routes.draw do
   #------------------------------
 
   #USERS
-  get("/users", { :controller => "photos", :action => "destroy" })
+  get("/users", { :controller => "user_authentication", :action => "index" })
 
 
 
