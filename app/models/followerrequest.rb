@@ -1,0 +1,2 @@
+class Followerrequest < ApplicationRecord
+end
