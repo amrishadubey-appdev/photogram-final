@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Follow request resource:
+
+  # CREATE
+  post("/insert_follow_request", { :controller => "follow_requests", :action => "create" })
+          
+  # READ
+  get("/follow_requests", { :controller => "follow_requests", :action => "index" })
+  
+  get("/follow_requests/:path_id", { :controller => "follow_requests", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_follow_request/:path_id", { :controller => "follow_requests", :action => "update" })
+  
+  # DELETE
+  get("/delete_follow_request/:path_id", { :controller => "follow_requests", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the User account:
 
   # SIGN UP FORM
@@ -42,25 +61,6 @@ Rails.application.routes.draw do
   
   # DELETE
   get("/delete_like/:path_id", { :controller => "likes", :action => "destroy" })
-
-  #------------------------------
-
-  # Routes for the Followerrequest resource:
-
-  # CREATE
-  post("/insert_followerrequest", { :controller => "followerrequests", :action => "create" })
-          
-  # READ
-  get("/followerrequests", { :controller => "followerrequests", :action => "index" })
-  
-  get("/followerrequests/:path_id", { :controller => "followerrequests", :action => "show" })
-  
-  # UPDATE
-  
-  post("/modify_followerrequest/:path_id", { :controller => "followerrequests", :action => "update" })
-  
-  # DELETE
-  get("/delete_followerrequest/:path_id", { :controller => "followerrequests", :action => "destroy" })
 
   #------------------------------
 
