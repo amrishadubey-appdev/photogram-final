@@ -8,7 +8,13 @@
 
 <div>
   <div>
+  <% if %>
+    <% session.fetch(:user_id) == nil %>
 
+     <h4> </h4>
+
+    <% else %>
+    
     <form action="/insert_photo" method="post" enctype="multipart/form-data">
       <label for="browser_input">Image</label>
       <input id="browser_input" type="file" name="query_image" placeholder="Enter a URL for the image...">
@@ -18,6 +24,8 @@
 
       <button>Add photo</button>
     </form>
+
+    <% end %>
     
   </div>
 </div>
