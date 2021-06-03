@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_28_011810) do
+ActiveRecord::Schema.define(version: 2021_06_03_021631) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "author_id"
@@ -36,14 +36,6 @@ ActiveRecord::Schema.define(version: 2021_05_28_011810) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "followrequests", force: :cascade do |t|
-    t.integer "recipient_id"
-    t.integer "sender_id"
-    t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "likes", force: :cascade do |t|
     t.integer "fan_id"
     t.integer "photo_id"
@@ -59,6 +51,8 @@ ActiveRecord::Schema.define(version: 2021_05_28_011810) do
     t.integer "owner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "avatar"
+    t.string "picupload"
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_05_28_011810) do
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "avatar"
   end
 
 end
