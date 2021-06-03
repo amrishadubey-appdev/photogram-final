@@ -8,6 +8,11 @@
   <dd>
     <%= @user.followers.count %>
 
+       <% if @user.id == session.fetch(:user_id) %>
+        <h4> Pending follow requests </h4>  
+       <%= @user.pending_followers.pluck(:username).to_sentence %>
+       
+      <% else %> 
 
       <div>
           <form action="/insert_follow_request" method="post">
@@ -18,6 +23,8 @@
             </button>
           </form>
     </div>
+
+    <% end %>
 
   </dd>
 
